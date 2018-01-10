@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 	$sql = "INSERT INTO TASKS (TITLE,COMPLETED) VALUES (:TITLE,:COMPLETED)";
 	$query = $db->prepare($sql);
 	$query->execute(array(":TITLE"=>$data->TITLE, ":COMPLETED"=>$data->COMPLETED));
-	$result['id'] = $db->lastInsertId();
+	$result['ID'] = $db->lastInsertId();
 	echo json_encode($result);
   }      
 ?>
